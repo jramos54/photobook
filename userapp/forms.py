@@ -4,7 +4,7 @@ from django.db.auth.contrib.models import User
 
 class UserForm(forms.Model):
   model = User
-  fields = ('first_name', 'last_name', 'email')
+  fields = '__all__'
 
 class profileForm(forms.Models):
   model=profile

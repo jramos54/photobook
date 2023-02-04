@@ -4,26 +4,31 @@
     
   </header>
   <body>
-    {% block content %}
+    
     <div>
       <ul>
         <li>
-          <a> home </a>
+          <a href="{% url 'index' %}"> home </a>
         </li>
         <li>
-          <a> Nueva Categoria </a>
+          <a href="{% url 'newcategory' %}"> Nueva Categoria </a>
         </li>
         <li>
-          <a> Subir Imagen </a>
+          <a href="{% url 'addimage' %}"> Subir Imagen </a>
         </li>
         <li>
-          <a> Login </a>
+          <a href="{% url 'login' %}"> Login </a>
         </li>
         <li>
-          <a> Registrarse </a>
+          <a href="{% url 'newuser' %}"> Registrarse </a>
+        </li> 
+        <li>
+          <a href="{% url 'admin:index' %}">admin</a>
+          
         </li>
       </ul>
     </div>
+    {% block content %}
     {% endblock %}
   </body>
 </html>

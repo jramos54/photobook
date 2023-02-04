@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    
+  </header>
+  <body>
+    {% extends 'headers.html' %}
+    
+    {% block content %}
+    <h1>Registrar Nueva Categoria</h1>
+    
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Registrar Categoria">
+    </form>
+    {% endblock %}
+  </body>
+</html>
