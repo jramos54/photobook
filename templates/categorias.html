@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <div>
+        <ul>
+          {% for categoria in categorias %}
+          <li>
+            <a href="{% url 'categorydetail' slug=categoria.slug %}">{{categoria.categoryname}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% block content %}
+      {% endblock %}
+</body>
+</html>

@@ -12,13 +12,16 @@ class profile(models.Model):
   ubicacion=models.CharField(verbose_name='Ubicacion',max_length=50)
   type=models.CharField(verbose_name='Rol',choices=opciones,default='', max_length=10)
 
-@receiver(post_save,sender=User)
-def createuserprofile(sender, instance, created, **kwargs):
-  if created:
-    profile.objects.create(user=instance)
+  def __str__(self):
+     return self.user.first_name
+  
+  @receiver(post_save,sender=User)
+  def createuserprofile(sender, instance, created, **kwargs):
+    if created:
+      profile.objects.create(user=instance)
 
-@receiver(post_save, sender=User)
-def saveuserprofile(sender, instance, **kwargs):
-    instance.profile.save()
+  @receiver(post_save, sender=User)
+  def saveuserprofile(sender, instance, **kwargs):
+      instance.profile.save()
   
   

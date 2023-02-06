@@ -9,4 +9,4 @@ class newcategoryform(forms.ModelForm):
 class uploadimageform(forms.ModelForm):
   class Meta:
     model=imagegallery
-    fields=('imagename','image','categoryimage','imagedescription')
+    fields='__all__'
